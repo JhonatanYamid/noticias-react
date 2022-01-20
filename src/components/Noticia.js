@@ -1,11 +1,11 @@
 import React from 'react'
 
 const Noticia = ({ noticia }) => {
-    const { urlToImage, url, title, description, source } = noticia;
-    const imagen = (urlToImage) ?
+    const { image, url, title, description, source } = noticia;
+    const imagen = (image) ?
         <div className="card-image">
-            <img src={urlToImage} alt={title} />
-            <span className="card-title">{source.name}</span>
+            <img src={image} alt={title} />
+            <span className="card-title">{source}</span>
         </div>
         : null
     return (
