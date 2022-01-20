@@ -11,14 +11,7 @@ function App() {
   useEffect(() => {
     const consultarApi = async () => {
       const url = `http://api.mediastack.com/v1/news?access_key=8b8cc2f222f179936aa3844944c2bf63&countries=us&languages=en&categories=${categoria}`;
-      const respuesta = await fetch(url, {
-        'headers': {
-          'Content-Security-Policy': 'upgrade-insecure-requests',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'DELETE, POST, GET, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
-    }
-      })
+      const respuesta = await fetch(url)
       const noticias = await respuesta.json();
       guardarNoticias(noticias.data);
     }
